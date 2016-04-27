@@ -165,7 +165,12 @@ function syncWeb(callback) {
 									if (!db[data.number]
 											|| db[data.number].content !== data.content) {
 										db[data.number] = data;
-										console.log('update: ' + data.number);
+										if (db[data.number])
+											console.log('update: '
+													+ data.number);
+										else
+											console.log('add new: '
+													+ data.number);
 										firebase.child(data.number).set(data);
 									}
 								}
@@ -180,7 +185,7 @@ var timeout = false;
 var intervalTime = 60 * 1000;
 
 function update() {
-	console.log('update ' + ++updateCount);
+	// console.log('update ' + ++updateCount);
 	syncWeb(function(err) {
 		if (err) {
 			console.log('Error: ');
