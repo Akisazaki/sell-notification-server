@@ -1,0 +1,12 @@
+{
+	"name": "kr.co.2cpu.sell.notify.server",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "node 2cpu.js"
+	},
+	"dependencies": {
+		"firebase": "*",
+		"iconv-lite" : "*",
+		"cheerio": "*"
+	}
+}
